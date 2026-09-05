@@ -1,70 +1,63 @@
-\# T20 Player Performance Scouting
+# T20 Player Performance Scouting
 
+A data analytics project that processes IPL ball-by-ball data
+and builds player performance metrics for T20 scouting.
 
+## Data Source
 
-T20 cricket analytics and player scouting engine built from ball-by-ball data, combining contextual performance metrics, statistical modelling, player similarity, and machine learning.
+Cricket match data is sourced from Cricsheet.
 
+The raw JSON files are kept locally and are not committed
+to GitHub.
 
+## Current Dataset
 
-\## Project Status
+- IPL matches processed: 1,243
+- Delivery records processed: 295,732
+- Failed matches: 0
 
+## Project Pipeline
 
+Cricsheet JSON
+→ ingestion
+→ processed match/delivery tables
+→ batting & bowling analytics
+→ phase analytics
+→ player performance scoring
+→ scouting metrics
 
-🚧 Early development
+## Project Structure
 
+t20-player-performance-scouting/
+├── data/
+│   ├── raw/
+│   ├── processed/
+│   └── analytics/
+├── notebooks/
+├── src/
+│   ├── config.py
+│   ├── ingestion.py
+│   ├── analytics.py
+│   └── pipeline.py
+├── tests/
+├── outputs/
+├── README.md
+├── requirements.txt
+├── .gitignore
+└── LICENSE
 
+## Running the Pipeline
 
-\## Data Source
+Activate the virtual environment and run:
 
+python -m src.pipeline
 
+## Testing
 
-This project uses ball-by-ball cricket data from Cricsheet.
+Run:
 
+python -m pytest tests -v
 
+## Status
 
-Raw datasets are not stored in this repository.
-
-
-
-\## Planned Components
-
-
-
-\- Ball-by-ball data ingestion
-
-\- Data validation and preprocessing
-
-\- T20 batting metrics
-
-\- T20 bowling metrics
-
-\- Contextual performance analysis
-
-\- Player similarity
-
-\- Statistical modelling
-
-\- Machine learning
-
-\- Player scouting engine
-
-
-
-\## Project Structure
-
-
-
-```text
-
-data/        Raw and processed project data
-
-notebooks/   Exploratory analysis
-
-src/         Reusable Python source code
-
-sql/         SQL transformations and analysis
-
-outputs/     Generated results
-
-tests/       Automated tests
-
+Core Project 1 pipeline completed and validated.
